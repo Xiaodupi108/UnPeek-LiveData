@@ -56,3 +56,12 @@ publish {
     licences = ['Apache-2.0']
     website = 'https://github.com/KunMinX/UnPeekLiveData'
 }
+
+//上传aar至Maven库配置
+ext {
+    libraryArtifactId = 'unpeek-livedata'
+    libraryDescription = 'The unpeek-livedata 4.4.1-beta1'
+    libraryVersion = '4.4.1-beta1'
+}
+
+apply from: '../mavenAAR.gradle'

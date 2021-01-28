@@ -18,8 +18,8 @@
 package com.kunminx.architecture.ui.callback;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
@@ -56,7 +56,7 @@ public class ProtectedUnPeekLiveData<T> extends LiveData<T> {
 
     private final HashMap<Integer, Boolean> observers = new HashMap<>();
 
-    public void observeInActivity(@NonNull AppCompatActivity activity, @NonNull Observer<? super T> observer) {
+    public void observeInActivity(@NonNull FragmentActivity activity, @NonNull Observer<? super T> observer) {
         LifecycleOwner owner = activity;
         Integer storeId = System.identityHashCode(activity.getViewModelStore());
         observe(storeId, owner, observer);
